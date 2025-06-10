@@ -7,7 +7,62 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body>
-    <h1 class="underline text-2xl w-fit mx-auto">Hello World!</h1>
+    <div class="h-screen flex justify-center p-5 font-[Poppins]">
+      <div
+        class="h-fit sm:h-9/12 border border-black rounded-sm p-5 flex flex-col items-center"
+      >
+        <h2 class="text-center text-xl font-medium">Create an account</h2>
+
+        <div class="line border border-t-2 border-d w-1/2"></div>
+        <form class="flex flex-col gap-3">
+          <div class="flex flex-col text-lg mt-8 sm:mt-5">
+            <label for="username">Username</label>
+            <input
+              class="border border-black rounded-sm sm:w-1/2 px-2 outline-none"
+              type="text"
+              name="username"
+              id="username"
+              required
+            />
+          </div>
+          <div class="flex flex-col text-lg">
+            <label for="email">Email</label>
+            <input
+              class="border border-black rounded-sm sm:w-1/2 px-2 outline-none"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          <div class="flex flex-col text-lg">
+            <label for="password">Password</label>
+            <input
+              class="border border-black rounded-sm sm:w-1/2 px-2 outline-none"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <div>
+            <h4 class="text-lg">
+              By creating an account, you agree to our
+              <a href="#" class="underline">Terms of use </a>and
+              <a href="#" class="underline">Privacy Policy</a>
+            </h4>
+          </div>
+          <div class="text-white font-medium">
+            <button
+              class="p-2 rounded-sm bg-[#b1b1b1] cursor-pointer sm:p-2 sm:text-lg"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
