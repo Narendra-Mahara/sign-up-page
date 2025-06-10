@@ -1,0 +1,52 @@
+# Node.js generated files
+/node_modules/
+.env
+# Temporary files
+/tmp/
+/tmp/log/
+
+# Logs
+/logs/
+/logs/error.log
+/logs/access.log
+
+# Configuration files
+/config/*.env
+/config/dev.config.js
+/config/prod.config.js
+
+# Cache files
+/cache/
+/cache/mongodb
+
+# .DS_Store (mac)
+/.DS_Store
+
+# IDE files
+/.idea/
+/idea/
+
+# Optional: Visual Studio Code files
+/.vscode/
+
+# Optional: VS Code's search result cache
+/.cache
+
+# Optional: .env files for local development (can be added if you want to ignore local env files)
+# /.env
+
+# Optional: compiled files (used for production environments)
+/build/
+/dist/
+
+# Optional: generated files from tools
+/public/app.js
+/public/bundle.js
+/public/styles.css
+
+# Optional: Other generated files
+/bin/
+/build/
+
+# Optional: TypeScript files if you're using TypeScript
+# /typings/
