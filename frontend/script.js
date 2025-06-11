@@ -6,10 +6,10 @@ form.addEventListener("submit", async (e) => {
   let password = document.querySelector("#password").value;
 
   try {
-    const response = await fetch("http://localhost:5000/signup", {
+    const response = await fetch("http://localhost:5000/api/v1/user/signup", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json", // Specify the data type as JSON
       },
       body: JSON.stringify({ username, email, password }),
     });
