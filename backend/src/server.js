@@ -16,9 +16,9 @@ app.use(
   })
 );
 
-app.use("/api/v1/user", router);
 app.use(express.json()); //to parse JSON bodies
 app.use(express.urlencoded({ limit: "16kb", extended: true })); //to parse urlencoded bodies for form data
+app.use("/api/v1/user", router);
 
 app.listen(process.env.PORT, () => {
   console.log(`server is running on http://localhost:${process.env.PORT}/`);
