@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 const signUpUser = async (req, res) => {
@@ -44,4 +45,45 @@ const signUpUser = async (req, res) => {
   });
 };
 
-export default signUpUser;
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res
+      .status(400)
+      .json({ message: "Email and password are requried!" });
+  }
+  const user = await User.findOne({ email });
+  if (!user) {
+    return res
+      .status(400)
+      .json({ message: "User with this email doesnot exists" });
+  }
+  const isPasswordCorrect = await bcrypt.compare(password, user.password);
+  if (!isPasswordCorrect) {
+    return res.status(400).json({ message: "Wrong password!" });
+  }
+
+  // generate jwt token
+  const token = await jwt.sign(
+    {
+      _id: user._id,
+      email: user.email,
+      username: user.username,
+    },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_EXPIRES_IN,
+    }
+  );
+
+  return res.status(200).json({
+    message: "User logged in successfully!",
+    user: {
+      id: user._id,
+      username: user.username,
+      email: user.email,
+      jwtToken: token,
+    },
+  });
+};
+export { signUpUser, loginUser };
