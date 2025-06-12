@@ -42,6 +42,7 @@ const signUpUser = async (req, res) => {
     id: _id,
     username: savedUsername,
     email: savedEmail,
+    message: "User registered successfully!",
   });
 };
 
